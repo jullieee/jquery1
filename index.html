@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset
+  <title></title>
+  <style media="screen">
+    .box {
+      width: 200px;
+      height: 200px;
+      background: grey;
+      display: inline-block;
+    }
+    .purple {
+      background: #8A2BE2;
+    }
+    .pink {
+      background: pink;
+    }
+    .blue {
+      background: #6495ED;
+      top: 100px;
+      left: 450px;
+      transition: 0.8s;
+    }
+    .lavender {
+      background: #7B68EE;
+    }
+    .rotate {
+      transform: rotate(360deg);
+      transition: 2s;
+    }
+    .brightpink {
+      background: #DA70D6;
+    }
+    .grey {
+      background-color: #BFBFBF;
+      transition: 0.5s;
+    }
+    .grey2 {
+      background-color: #DA70D6;
+      transition: 0.5s;
+    }
+    .lightblue {
+      background: #87CEFA;
+    }
+    .narrow {
+      width: 50px;
+      transition: 0.5s;
+    }
+    .narrow2 {
+      width: 200px;
+      transition: 0.5s;
+    }
+    .lightpurple {
+      background: #C6B1F4;
+    }
+    .up {
+      height: 50px;
+      transition: 0.5s;
+    }
+    .up2 {
+      height: 200px;
+      transition: 0.5s;
+    }
+    .hidden {
+      opacity: 0.5;
+      transition: 0.5s;
+      top: -250px;
+    }
+    .blocker {
+      display: none;
+    }
+    .rounder {
+      border-radius: 50%;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+
+      	$(".blue, .purple").click(function(){
+
+          $(".blue.hidden").removeClass("blocker");
+
+          setTimeout(function(){
+            $(".blue").toggleClass("hidden");
+          }, 1);
+
+          setTimeout(function(){
+            $(".blue.hidden").addClass("blocker");
+          }, 500);
+        });
+
+        	$(".pink").click(function(){
+
+          if ($(".pink").hasClass("rounder")) {
+            $(".purple").toggleClass("hidden");
+          }
+            $(this).toggleClass("rounder");
+          },);
+
+          $(".lavender").click(function(){
+              $(this).toggleClass("rotate");
+            });
+
+            $(".brightpink").click(function(){
+            if ($(".brightpink").hasClass("grey")) {
+                $(".brightpink").toggleClass("grey2");
+              }
+                $(this).toggleClass("grey");
+              },);
+
+
+              $(".lightblue").click(function(){
+              if ($(".lightblue").hasClass("narrow")) {
+                  $(".lightpurple").toggleClass("up");
+                  $(".lightblue").toggleClass("narrow2");
+                }
+                  $(this).toggleClass("narrow");
+                  $(".lightpurple").toggleClass("up2");
+                },);
+      	});
+
+    </script>
+
+</head>
+  <body>
+    <div class="box pink"></div>
+    <div class="box blue"></div>
+    <div class="box purple"></div>
+    <div class="box lavender"></div>
+    <div class="box brightpink"></div>
+    <div class="box lightblue"></div>
+    <div class="box lightpurple"></div>
+  </body>
+</html>
